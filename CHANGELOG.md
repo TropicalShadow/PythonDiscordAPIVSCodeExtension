@@ -1,9 +1,18 @@
-# Change Log
+# Changelog
 
-All notable changes to the "pythondiscordapivscodeextension" extension will be documented in this file.
+All notable changes to the "Python Discord API VSCode Extension" will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Website coming Soon
 
 ## [Unreleased]
 
-- Initial release
+- [x] Initial release
+- [ ] Snippets
+  - [ ] Main
+  - [ ] Cogs
+  - [ ] Commands
+  - [ ] Events
+  
+## [0.0.1] 2020-08-08
+### Added
+- Basic Files for a VS Code Extension to work
