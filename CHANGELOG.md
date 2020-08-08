@@ -9,10 +9,25 @@ Website coming Soon
 - [x] Initial release
 - [ ] Snippets
   - [ ] Main
-  - [ ] Cogs
-  - [ ] Commands
-  - [ ] Events
+      - [ ] Commands
+        - [ ] Ping-Pong Template 
+        - [ ] Command aliases 
+    - [ ] Events
+  - [x] Cogs
+    - [x] Commands
+      - [x] Ping-Pong Template 
+      - [x] Command aliases 
+    - [ ] Events
   
 ## [0.0.1] 2020-08-08
 ### Added
 - Basic Files for a VS Code Extension to work
+
+## [1.0.0] 2020-08-08
+### Added
+- Snippets added
+  - Cog Template
+  - Cog Command and command aliases
+
+### Removed
+- Hello World Default Command

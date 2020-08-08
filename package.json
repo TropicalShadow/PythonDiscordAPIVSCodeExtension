@@ -2,7 +2,7 @@
 	"name": "pythondiscordapivscodeextension",
 	"displayName": "PythonDiscordAPIVSCodeExtension",
 	"description": "This is an extension for Visual Studio Code to allow for faster use of Python's Discord API",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -15,9 +15,11 @@
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
+		],
+		"snippets": [
 			{
-				"command": "pythondiscordapivscodeextension.helloWorld",
-				"title": "Hello World"
+				"language": "python",
+				"path": "snippets/snippets.json"
 			}
 		]
 	},

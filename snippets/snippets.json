@@ -1,0 +1,42 @@
+{
+    "Cog Template file":{
+        "prefix":"cog",
+        "body":[
+            "from discord.ext.commands import Cog",
+            "from discord.ext import commands",
+            "",
+            "class ${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(Cog):",
+            "    def __init__(self,bot):",
+            "        self.bot = bot",
+            "",
+            "    @commands.command(name=\"${2:ping}\")",
+            "    async def ${2:ping}_command(self,ctx,*args,**kwargs):",
+            "        await ctx.send(\"pong\")",
+            "    $0",
+            "",
+            "def setup(bot):",
+            "    bot.add_cog(${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(bot))"
+        ],
+        "description":"Discord Cog Template Code"
+    },
+    "Cog Command":{
+        "prefix":"command",
+        "body":[
+            "@commands.command(name=\"${1:ping}\")",
+            "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
+            "   ${2:await ctx.send(\"pong\")}",
+            "   $0"
+        ],
+        "description":"Discord Command Template"
+    },
+    "Cog Command with alts":{
+        "prefix":"command-aliases",
+        "body":[
+            "@commands.command(name=\"${1:ping}\",aliases=['${2:ding}'])",
+            "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
+            "   ${3:await ctx.send(\"pong\")}",
+            "   $0"
+        ],
+        "description":"Discord Command with aliases Template"
+    }
+}
