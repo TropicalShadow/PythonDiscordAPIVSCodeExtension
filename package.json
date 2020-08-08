@@ -3,6 +3,8 @@
 	"displayName": "PythonDiscordAPIVSCodeExtension",
 	"description": "This is an extension for Visual Studio Code to allow for faster use of Python's Discord API",
 	"version": "1.0.0",
+	"author": {"name": "TropicalShadow","url": "https://tropicaldan.tk/"},
+	"publisher": "TropicalShadow",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
