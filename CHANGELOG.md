@@ -45,3 +45,12 @@ Website coming Soon
   - Main Bot
   - Main Bot command and command aliases
 - Create Bot Command ```ctrl+shift+p``` -> Create Bot
+
+## [1.1.1] 2020-8-11
+
+### Added
+
+* Changed Generated code for Cog as template code doesn't work
+* snippet main code.
+  *  `token=token` -> `TOKEN`
+  *  `if cog.endswith(".py"):`

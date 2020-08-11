@@ -2,7 +2,7 @@
 	"name": "pythondiscordapivscodeextension",
 	"displayName": "PythonDiscordAPIVSCodeExtension",
 	"description": "This is an extension for Visual Studio Code to allow for faster use of Python's Discord API",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"author": {"name": "TropicalShadow","url": "https://tropicaldan.tk/"},
 	"publisher": "TropicalShadow",
 	"homepage": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension",
@@ -30,10 +30,6 @@
 			{
 				"command":"pythondiscordapivscodeextension.createbot",
 				"title": "PYDiscordAPI -> Create Bot"
-			},
-			{
-				"command":"pythondiscordapivscodeextension.test",
-				"title": "PYDiscordAPI -> TEST"
 			}
 		],
 		"snippets": [

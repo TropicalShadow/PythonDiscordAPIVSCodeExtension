@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 const fs = require("fs");
 const snippets = require('./snippets/snippets.json');
+const TemplateCogCode = require("./snippets/TemplateCog.json");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
@@ -55,8 +56,8 @@ function activate(context) {
 				fs.writeFileSync(subfolder+`/TOKEN.key`,"REPLACE THIS WITH API TOKEN");//Token File
 				fs.mkdirSync(subfolder+`/cogs`);//COGS FOLDER
 				var cogfolder = subfolder+`/cogs`;//COGS FOLDER LOCATION
-				var Templatecog = snippets["Cog Template file"].body.join('\n');//Cog Template Code
-				fs.writeFileSync(cogfolder+`/Template.py`,Templatecog);//COG TEMPLATE FILE
+				//var Templatecog = snippets["Cog Template file"].body.join('\n');//Cog Template Code
+				fs.writeFileSync(cogfolder+`/Template.py`,TemplateCogCode["main cog"].join("\n"));//COG TEMPLATE FILE
 				console.log(`${BotName} Created `);//FINISHED OUTPUT
 				vscode.window.showInformationMessage(`${BotName} has been created.`)
 			});
