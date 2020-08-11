@@ -2,9 +2,19 @@
 	"name": "pythondiscordapivscodeextension",
 	"displayName": "PythonDiscordAPIVSCodeExtension",
 	"description": "This is an extension for Visual Studio Code to allow for faster use of Python's Discord API",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"author": {"name": "TropicalShadow","url": "https://tropicaldan.tk/"},
 	"publisher": "TropicalShadow",
+	"homepage": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension",
+	"icon": "images/Thumbnail.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension"
+	},
+	"bugs": {
+		"url": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension/issues"
+	},
+	"keywords": ["Python","Discord","Snippets"],
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -12,11 +22,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:pythondiscordapivscodeextension.helloWorld"
+		"*"
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [
+		"commands":[
+			{
+				"command":"pythondiscordapivscodeextension.createbot",
+				"title": "PYDiscordAPI -> Create Bot"
+			},
+			{
+				"command":"pythondiscordapivscodeextension.test",
+				"title": "PYDiscordAPI -> TEST"
+			}
 		],
 		"snippets": [
 			{

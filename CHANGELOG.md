@@ -8,26 +8,40 @@ Website coming Soon
 
 - [x] Initial release
 - [ ] Snippets
-  - [ ] Main
-      - [ ] Commands
-        - [ ] Ping-Pong Template 
-        - [ ] Command aliases 
+  - [x] Main
+      - [x] Commands
+        - [x] Ping-Pong Template
+        - [x] Command aliases
     - [ ] Events
   - [x] Cogs
     - [x] Commands
-      - [x] Ping-Pong Template 
-      - [x] Command aliases 
+      - [x] Ping*Pong Template
+      - [x] Command aliases
     - [ ] Events
-  
+
 ## [0.0.1] 2020-08-08
+
 ### Added
+
 - Basic Files for a VS Code Extension to work
 
 ## [1.0.0] 2020-08-08
+
 ### Added
+
 - Snippets added
   - Cog Template
   - Cog Command and command aliases
 
 ### Removed
+
 - Hello World Default Command
+
+## [1.1.0] 2020-8-11
+
+### Added
+
+- Snippets added
+  - Main Bot
+  - Main Bot command and command aliases
+- Create Bot Command ```ctrl+shift+p``` -> Create Bot
