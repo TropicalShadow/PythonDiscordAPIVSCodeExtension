@@ -89,7 +89,7 @@
         "description":"Discord Command Template"
     },
     "Bot Command with alts":{
-        "prefix":"discord-bot-cog-command-aliases",
+        "prefix":"discord-bot-command-aliases",
         "body":[
             "@bot.command(name=\"${1:ping}\",aliases=['${2:ding}'])",
             "async def ${1:ping}_command(ctx,*args,**kwargs):",
