@@ -1,7 +1,7 @@
 # Python DiscordAPI VSCode Extension
 
 [![GitHub issues](https://img.shields.io/github/issues/TropicalShadow/PythonDiscordAPIVSCodeExtension?color=orange&label=Issues)](https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension/issues) 
-[![GitHub stars](https://img.shields.io/github/stars/TropicalShadow/PythonDiscordAPIVSCodeExtension)](https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension/stargazers) [![GitHub license](https://img.shields.io/github/license/TropicalShadow/PythonDiscordAPIVSCodeExtension)](https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension)  [![Discord](https://img.shields.io/discord/664883950333853697?color=green&label=Discord&logo=Discord)](https://discord.gg/RrC8yW7)
+[![GitHub stars](https://img.shields.io/github/stars/TropicalShadow/PythonDiscordAPIVSCodeExtension)](https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension/stargazers) [![GitHub license](https://img.shields.io/github/license/TropicalShadow/PythonDiscordAPIVSCodeExtension)](https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension)  [![Discord](https://img.shields.io/discord/664883950333853697?color=green&label=Discord&logo=Discord)](https://discord.gg/BeZCPq6Exx)
 
 ## Features
 
@@ -9,6 +9,8 @@
 - Create Bot Command
 
 ![example](images/SnippetExample.png)
+
+> This Extension is outdated, fixes and updates coming soon
 
 -----------------------------------------------------------------------------------------------------------
 
