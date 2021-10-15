@@ -20,7 +20,7 @@
         "description":"Discord Cog Template Code"
     },
     "Cog Command":{
-        "prefix":"discord-bot-cog-command",
+        "prefix":"discord-cog-command",
         "body":[
             "@commands.command(name=\"${1:ping}\")",
             "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
@@ -30,7 +30,7 @@
         "description":"Discord Cog Command Template"
     },
     "Cog Command with alts":{
-        "prefix":"discord-bot-cog-command-aliases",
+        "prefix":"discord-cog-command-aliases",
         "body":[
             "@commands.command(name=\"${1:ping}\",aliases=['${2:ding}'])",
             "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
@@ -44,8 +44,8 @@
         "description":"Discord bot main file Template",
         "body":[
             "from discord.ext.commands import Bot",
+            "from discord import __version__, Intents",
             "from os import listdir",
-            "from discord import __version__",
             "",
             "with open(\"TOKEN.key\",\"r\") as fp:",
             "    TOKEN = fp.readline()",
@@ -53,16 +53,16 @@
             "description = \"\"\"A Fully Custom Discord Bot\"\"\"",
             "command_prefix = (\"!\",)",
             "",
-            "bot = Bot(command_prefix=command_prefix,description=description)",
+            "intents = Intents.default()",
+            "",
+            "bot = Bot(command_prefix=command_prefix,description=description,intents=intents)",
             "",
             "print (\"Discord Version:\",__version__)",
             "print (\"Loading Bot, Please Wait\")",
             "",
             "@bot.command(pass_context=True)",
             "async def ping(ctx,*args,**kwargs):",
-            "    start = d.timestamp(d.now())",
-            "    msg = await ctx.send(content='Pinging')",
-            "    await msg.edit(content=f'Pong! One message round-trip took {( d.timestamp( d.now() ) - start ) * 1000 }ms.',delete_after=3)",
+            "    await ctx.send(content='pong')",
             "",
             "cogs = sorted(listdir(\"./cogs\"))",
             "for cog in cogs:",
@@ -75,7 +75,7 @@
             "            print(f\"{cog} can not be loaded\")",
             "            print(e)",
             "",
-            "bot.run(TOKEN,bot=True,reconnect=True)"
+            "bot.run(TOKEN)"
         ]
     },
     "Bot Command":{
@@ -97,5 +97,25 @@
             "   $0"
         ],
         "description":"Discord Command with aliases Template"
+    },
+    "Bot listener":{
+        "prefix":"discord-bot-listener",
+        "body":[
+            "@bot.listener(name=\"${1:on_ready}\")",
+            "async def ${1:on_ready}_listener(ctx,*args,**kwargs):",
+            "   ${2:await ctx.send(\"pong\")}",
+            "   $0"
+        ],
+        "description":"Discord Bot Listener Function"
+    },
+    "Bot Cog listener":{
+        "prefix":"discord-cog-listener",
+        "body":[
+            "@commands.Cog.listener(name=\"${1:on_ready}\")",
+            "async def ${1:on_ready}_listener(ctx,*args,**kwargs):",
+            "   ${2:await ctx.send(\"pong\")}",
+            "   $0"
+        ],
+        "description":"Discord Cog Listener"
     }
 }

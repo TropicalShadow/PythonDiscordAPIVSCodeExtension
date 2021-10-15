@@ -10,8 +10,6 @@
 
 ![example](images/SnippetExample.png)
 
-> This Extension is outdated, fixes and updates coming soon
-
 -----------------------------------------------------------------------------------------------------------
 
 ## Extension Settings
@@ -32,47 +30,48 @@ This extension contributes the following settings: -->
 
 ### 0.0.1
 
-* Initial release
+- Initial release
 
 ### 0.0.1 - Alpha
 
-* Extension Files added
+- Extension Files added
 
 ## [1.0.0] 2020-08-08
 
-### Added
-
-* Snippets added
-  * Cog Template
-  * Cog Command and command aliases
+- Snippets added
+  - Cog Template
+  - Cog Command and command aliases
 
 ### Removed
 
-* Hello World Default Command
+- Hello World Default Command
 
 ## [1.1.0] 2020-8-11
 
-### Added
-
-* Snippets added
-  * Main Bot
-  * Main Bot command and command aliases
-* Create Bot Command ```ctrl+shift+p``` -> Create Bot
+- Snippets added
+  - Main Bot
+  - Main Bot command and command aliases
+- Create Bot Command ```ctrl+shift+p``` -> Create Bot
 
 ## [1.1.1] 2020-8-11
 
-### Added
+- Changed Generated code for Cog as template code doesn't work
+- snippet main code.
+  - `token=token` -> `TOKEN`
+  - `if cog.endswith(".py"):`
 
-* Changed Generated code for Cog as template code doesn't work
-* snippet main code.
-  *  `token=token` -> `TOKEN`
-  *  `if cog.endswith(".py"):`
+### [1.1.2] 2021-10-15
+
+- Changed main bot snippet
+- Discord Cog Listeners
+- Renamed `bot-cog` to `cog` for easier reading
+- Fixed really long wait time for bot command to complete
 
 -----------------------------------------------------------------------------------------------------------
 
 ### For more information
 
-* **Discord** - RealName_123#2570 | RealName_123#8866
+- **Discord** - RealName_123#2570 | RealName_123#8866
 
 > Everythin will be fine...
 

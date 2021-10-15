@@ -3,7 +3,10 @@
 	"displayName": "PythonDiscordAPIVSCodeExtension",
 	"description": "This is an extension for Visual Studio Code to allow for faster use of Python's Discord API",
 	"version": "1.1.1",
-	"author": {"name": "TropicalShadow","url": "https://tropicaldan.tk/"},
+	"author": {
+		"name": "TropicalShadow",
+		"url": "https://troicalshadow.tech/"
+	},
 	"publisher": "TropicalShadow",
 	"homepage": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension",
 	"icon": "images/Thumbnail.png",
@@ -14,7 +17,12 @@
 	"bugs": {
 		"url": "https://github.com/TropicalShadow/PythonDiscordAPIVSCodeExtension/issues"
 	},
-	"keywords": ["Python","Discord","Snippets"],
+	"keywords": [
+		"PyCord",
+		"Python",
+		"Discord",
+		"Snippets"
+	],
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -26,9 +34,9 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands":[
+		"commands": [
 			{
-				"command":"pythondiscordapivscodeextension.createbot",
+				"command": "pythondiscordapivscodeextension.createbot",
 				"title": "PYDiscordAPI -> Create Bot"
 			}
 		],
@@ -45,14 +53,14 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.47.0",
-		"@types/glob": "^7.1.1",
+		"@types/glob": "^7.1.4",
 		"@types/mocha": "^7.0.2",
-		"@types/node": "^13.11.0",
-		"eslint": "^6.8.0",
-		"glob": "^7.1.6",
-		"mocha": "^7.1.2",
-		"typescript": "^3.8.3",
-		"vscode-test": "^1.3.0"
+		"@types/node": "^13.13.52",
+		"@types/vscode": "^1.61.0",
+		"eslint": "^8.0.1",
+		"glob": "^7.2.0",
+		"mocha": "^9.1.2",
+		"typescript": "^3.9.10",
+		"vscode-test": "^1.6.1"
 	}
 }

@@ -18,8 +18,11 @@ function activate(context) {
 	}); */
 	var createBot = vscode.commands.registerCommand("pythondiscordapivscodeextension.createbot", function () {
 		vscode.window.showInformationMessage('Creating Bot Files Now...');
-		var folder = vscode.workspace.rootPath;
-
+		if(vscode.workspace.workspaceFolders == undefined){
+			vscode.window.showWarningMessage("You do not have a workspace open!")
+			return;
+		}
+		const folder = vscode.workspace.workspaceFolders[0].uri.fsPath
 		vscode.window.showInputBox({prompt:"Bot Name: ",placeHolder:"(DemonicBot)"}).then(BotName =>{
 			if(!BotName){
 				vscode.window.showErrorMessage("Failed to give a valid input.");
@@ -50,14 +53,15 @@ function activate(context) {
 					vscode.window.showErrorMessage(`Error Generated - ${err.code}`);
 					return;
 				}
-				var subfolder = folder+`/${BotName}`;//Bot Folder
-				var main = snippets["Main Bot File"].body.join('\n');//MAIN CODE
-				fs.writeFileSync(subfolder+`/Main.py`,main);//Main File
-				fs.writeFileSync(subfolder+`/TOKEN.key`,"REPLACE THIS WITH API TOKEN");//Token File
+				const subfolder = folder+`/${BotName}`;//Bot Folder
+				const main = snippets["Main Bot File"].body.join('\n');//MAIN CODE
+				//console.log(main);
+				fs.writeFile(subfolder+`/main.py`,main,()=>{});//Main File
+				fs.writeFile(subfolder+`/TOKEN.key`,"REPLACE THIS WITH API TOKEN",()=>{});//Token File
 				fs.mkdirSync(subfolder+`/cogs`);//COGS FOLDER
-				var cogfolder = subfolder+`/cogs`;//COGS FOLDER LOCATION
+				const cogfolder = subfolder+`/cogs`;//COGS FOLDER LOCATION
 				//var Templatecog = snippets["Cog Template file"].body.join('\n');//Cog Template Code
-				fs.writeFileSync(cogfolder+`/Template.py`,TemplateCogCode["main cog"].join("\n"));//COG TEMPLATE FILE
+				fs.writeFile(cogfolder+`/Template.py`,TemplateCogCode["main cog"].join("\n"),()=>{});//COG TEMPLATE FILE
 				console.log(`${BotName} Created `);//FINISHED OUTPUT
 				vscode.window.showInformationMessage(`${BotName} has been created.`)
 			});
@@ -72,10 +76,10 @@ function activate(context) {
 	context.subscriptions.push(createBot);
 	//context.subscriptions.push(testcmd);
 }
-exports.activate = activate;
-
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() {
+	vscode.window.showInformationMessage(`Thank you for using my extension!`)
+}
 
 module.exports = {
 	activate,
