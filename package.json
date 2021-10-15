@@ -24,7 +24,7 @@
 		"Snippets"
 	],
 	"engines": {
-		"vscode": "^1.47.0"
+		"vscode": "^1.61.0"
 	},
 	"categories": [
 		"Other"
