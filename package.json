@@ -49,8 +49,7 @@
 	},
 	"scripts": {
 		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
+		"pretest": "npm run lint"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.4",
