@@ -49,3 +49,9 @@ Website coming Soon
 - Discord Cog Listeners
 - Renamed `bot-cog` to `cog` for easier reading
 - Fixed really long wait time for bot command to complete
+
+### [1.2.0] 2024-3-21
+
+- Updated snippets to work with Pycord latest
+- Snippet code refactor
+- Remove obsolite tests
