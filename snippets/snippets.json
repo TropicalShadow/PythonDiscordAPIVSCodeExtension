@@ -1,121 +1,85 @@
 {
-    "Cog Template file":{
-        "prefix":"discord-bot-cog",
-        "body":[
-            "from discord.ext.commands import Cog",
-            "from discord.ext import commands",
-            "",
-            "class ${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(Cog):",
-            "    def __init__(self,bot):",
-            "        self.bot = bot",
-            "",
-            "    @commands.command(name=\"${2:ping}\")",
-            "    async def ${2:ping}_command(self,ctx,*args,**kwargs):",
-            "        await ctx.send(\"pong\")",
-            "    $0",
-            "",
-            "def setup(bot):",
-            "    bot.add_cog(${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(bot))"
-        ],
-        "description":"Discord Cog Template Code"
-    },
-    "Cog Command":{
-        "prefix":"discord-cog-command",
-        "body":[
-            "@commands.command(name=\"${1:ping}\")",
-            "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
-            "   ${2:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Cog Command Template"
-    },
-    "Cog Command with alts":{
-        "prefix":"discord-cog-command-aliases",
-        "body":[
-            "@commands.command(name=\"${1:ping}\",aliases=['${2:ding}'])",
-            "async def ${1:ping}_command(self,ctx,*args,**kwargs):",
-            "   ${3:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Cog Command with aliases Template"
-    },
-    "Main Bot File":{
-        "prefix":"discord-bot-main-template",
-        "description":"Discord bot main file Template",
-        "body":[
-            "from discord.ext.commands import Bot",
-            "from discord import __version__, Intents",
-            "from os import listdir",
-            "",
-            "with open(\"TOKEN.key\",\"r\") as fp:",
-            "    TOKEN = fp.readline()",
-            "",
-            "description = \"\"\"A Fully Custom Discord Bot\"\"\"",
-            "command_prefix = (\"!\",)",
-            "",
-            "intents = Intents.default()",
-            "",
-            "bot = Bot(command_prefix=command_prefix,description=description,intents=intents)",
-            "",
-            "print (\"Discord Version:\",__version__)",
-            "print (\"Loading Bot, Please Wait\")",
-            "",
-            "@bot.command(pass_context=True)",
-            "async def ping(ctx,*args,**kwargs):",
-            "    await ctx.send(content='pong')",
-            "",
-            "cogs = sorted(listdir(\"./cogs\"))",
-            "for cog in cogs:",
-            "      if cog.endswith(\".py\"):",
-            "         try:",
-            "            cog = f\"cogs.{cog.replace('.py','')}\"",
-            "            bot.load_extension(cog)",
-            "            print(f\"loaded {cog}\")",
-            "         except Exception as e:",
-            "            print(f\"{cog} can not be loaded\")",
-            "            print(e)",
-            "",
-            "bot.run(TOKEN)"
-        ]
-    },
-    "Bot Command":{
-        "prefix":"discord-bot-command",
-        "body":[
-            "@bot.command(name=\"${1:ping}\")",
-            "async def ${1:ping}_command(ctx,*args,**kwargs):",
-            "   ${2:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Command Template"
-    },
-    "Bot Command with alts":{
-        "prefix":"discord-bot-command-aliases",
-        "body":[
-            "@bot.command(name=\"${1:ping}\",aliases=['${2:ding}'])",
-            "async def ${1:ping}_command(ctx,*args,**kwargs):",
-            "   ${3:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Command with aliases Template"
-    },
-    "Bot listener":{
-        "prefix":"discord-bot-listener",
-        "body":[
-            "@bot.listener(name=\"${1:on_ready}\")",
-            "async def ${1:on_ready}_listener(ctx,*args,**kwargs):",
-            "   ${2:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Bot Listener Function"
-    },
-    "Bot Cog listener":{
-        "prefix":"discord-cog-listener",
-        "body":[
-            "@commands.Cog.listener(name=\"${1:on_ready}\")",
-            "async def ${1:on_ready}_listener(ctx,*args,**kwargs):",
-            "   ${2:await ctx.send(\"pong\")}",
-            "   $0"
-        ],
-        "description":"Discord Cog Listener"
-    }
+  "Cog Template file": {
+    "prefix": "discord-bot-cog",
+    "body": [
+      "from discord.ext.commands import Cog, Bot",
+      "from discord import slash_command, ApplicationContext",
+      "",
+      "class ${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(Cog):",
+      "    def __init__(self, bot: Bot):",
+      "        self.bot = bot",
+      "",
+      "    @slash_command(name=\"${2:ping}\")",
+      "    async def ${2:ping}_command(self, ctx: ApplicationContext):",
+      "        await ctx.respond(\"pong\")",
+      "    $0",
+      "",
+      "def setup(bot: Bot):",
+      "    bot.add_cog(${1:${TM_FILENAME_BASE/[\\.-]/_/g}}(bot))"
+    ],
+    "description": "Discord Cog Template Code"
+  },
+  "Cog Command": {
+    "prefix": "discord-cog-command",
+    "body": [
+      "@slash_command(name=\"${1:ping}\")",
+      "async def ${1:ping}_command(self, ctx: ApplicationContext):",
+      "   ${2:await ctx.respond(\"pong\")}",
+      "   $0"
+    ],
+    "description": "Discord Cog Command Template"
+  },
+  "Main Bot File": {
+    "prefix": "discord-bot-main-template",
+    "description": "Discord bot main file Template",
+    "body": [
+      "from discord.ext.commands import Bot",
+      "from discord import __version__, Intents",
+      "from os import listdir",
+      "",
+      "TOKEN = 'YOUR_BOT_TOKEN'",
+      "",
+      "intents = Intents.default()",
+      "",
+      "bot = Bot(intents=intents)",
+      "",
+      "print (\"Discord Version:\",__version__)",
+      "print (\"Loading Bot, Please Wait\")",
+      "",
+      "@bot.slash_command(name=\"ping\", description=\"Ping the bot\")",
+      "async def ping_command(ctx: ApplicationContext):",
+      "    await ctx.respond('pong')",
+      "",
+      "",
+      "bot.run(TOKEN)"
+    ]
+  },
+  "Bot Command": {
+    "prefix": "discord-bot-command",
+    "body": [
+      "@bot.slash_command(name=\"${1:ping}\")",
+      "async def ${1:ping}_command(ctx: ApplicationContext):",
+      "   ${2:await ctx.respond(\"pong\")}",
+      "   $0"
+    ],
+    "description": "Discord Command Template"
+  },
+  "Bot listener": {
+    "prefix": "discord-bot-listener",
+    "body": [
+      "@bot.listener(name=\"${1:on_ready}\")",
+      "async def ${1:on_ready}_listener($2):",
+      "   $0"
+    ],
+    "description": "Discord Bot Listener Function"
+  },
+  "Bot Cog listener": {
+    "prefix": "discord-cog-listener",
+    "body": [
+      "@Cog.listener(name=\"${1:on_ready}\")",
+      "async def ${1:on_ready}_listener(self, $2):",
+      "   $0"
+    ],
+    "description": "Discord Cog Listener"
+  }
 }

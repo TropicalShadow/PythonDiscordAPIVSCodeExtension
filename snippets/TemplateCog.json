@@ -1,18 +1,18 @@
 {
     "main cog":[
-        "from discord.ext.commands import Cog",
-        "from discord.ext import commands",
+        "from discord.ext.commands import Cog, Bot",
+        "from discord import slash_command",
         "",
         "class Template(Cog):",
-        "    def __init__(self,bot):",
+        "    def __init__(self, bot: Bot):",
         "        self.bot = bot",
         "",
-        "    @commands.command(name=\"Cog_Ping\")",
-        "    async def Cog_ping_command(self,ctx,*args,**kwargs):",
-        "        await ctx.send(\"pong\")",
+        "    @slash_command(name=\"ping\")",
+        "    async def ping_command(self, ctx):",
+        "        await ctx.respond(\"pong\")",
         "",
         "",
-        "def setup(bot):",
+        "def setup(bot: Bot):",
         "    bot.add_cog(Template(bot))"
     ]
 }
